@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:week3/screens/initialState.dart';
 import 'package:week3/screens/setState.dart';
 import 'package:week3/widgets/card_demo.dart';
 import 'package:week3/widgets/column_page.dart';
+import 'package:week3/widgets/counter_page.dart';
 import 'package:week3/widgets/list_view_menu.dart';
 import 'package:week3/widgets/my_card.dart';
 import 'package:week3/widgets/row_page.dart';
@@ -106,6 +108,30 @@ class HomePage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const SetStateDemo(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.backspace),
+              title: const Text("Initial State"),
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const InitialState(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.countertops),
+              title: const Text("Counter App"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CounterPage(),
                   ),
                 );
               },
