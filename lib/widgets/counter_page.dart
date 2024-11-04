@@ -45,23 +45,28 @@ class _CounterPageState extends State<CounterPage> {
               "$counter",
               style: TextStyle(color: Colors.white, fontSize: 250),
             ),
-            ElevatedButton(
-              onPressed: () {
-                incrementCounter();
-              },
-              child: Icon(Icons.add),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                resetCounter();
-              },
-              child: Icon(Icons.restore),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                decrementCounter();
-              },
-              child: Icon(Icons.remove),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    incrementCounter();
+                  },
+                  child: Icon(Icons.add),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    resetCounter();
+                  },
+                  child: Icon(Icons.restore),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    decrementCounter();
+                  },
+                  child: Icon(Icons.remove),
+                ),
+              ],
             ),
           ],
         ),
