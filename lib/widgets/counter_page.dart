@@ -10,11 +10,24 @@ class CounterPage extends StatefulWidget {
 class _CounterPageState extends State<CounterPage> {
   int counter = 0;
 
-  void incrementCounter(){
-    // setState(() {
-    //   counter++;
-    // });
+  void incrementCounter() {
+    setState(() {
+      counter++;
+    });
   }
+
+  void resetCounter() {
+    setState(() {
+      counter = 0;
+    });
+  }
+
+  void decrementCounter() {
+    setState(() {
+      counter--;
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +47,22 @@ class _CounterPageState extends State<CounterPage> {
             ),
             ElevatedButton(
               onPressed: () {
-                setState(() {
-                  counter ++;
-                });
+                incrementCounter();
               },
               child: Icon(Icons.add),
-            )
+            ),
+            ElevatedButton(
+              onPressed: () {
+                resetCounter();
+              },
+              child: Icon(Icons.restore),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                decrementCounter();
+              },
+              child: Icon(Icons.remove),
+            ),
           ],
         ),
       ),
