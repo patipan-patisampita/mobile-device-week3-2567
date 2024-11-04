@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:week3/column_page.dart';
-import 'package:week3/list_view_menu.dart';
-import 'package:week3/row_page.dart';
+import 'package:week3/widgets/card_demo.dart';
+import 'package:week3/widgets/column_page.dart';
+import 'package:week3/widgets/list_view_menu.dart';
+import 'package:week3/widgets/my_card.dart';
+import 'package:week3/widgets/row_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -67,6 +69,30 @@ class HomePage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const ListViewMenu(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.credit_score),
+              title: const Text("Card & Inkwell widget"),
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CardDemo(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.credit_card),
+              title: const Text("My Card"),
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MyCard(),
                   ),
                 );
               },
